@@ -11,8 +11,8 @@
 		<script src="js/controllers/conversationCtrl.js"></script>
 		<script src="js/services/conversationAPIService.js"></script>
 		<script src="js/value/configValue.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.js"></script>
-				
+		<script src="js/sanitize.js"></script>
+
 		<!-- Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.6-dist/css/bootstrap.css">
 		<!-- My css -->
