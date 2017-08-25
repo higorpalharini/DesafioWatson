@@ -1,3 +1,3 @@
 angular.module("conversation").constant("config", {
-	baseUrl: "https://desafiowatson.herokuapp.com"
+	baseUrl: "http://localhost:8080"
 });  

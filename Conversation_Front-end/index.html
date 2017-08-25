@@ -25,16 +25,16 @@
 			<div style="width: 100%"> 
 				<h2 ng-bind="app"></h2>
 				
-				<form name="formConversation" class="margin center" style=" width: 40%">
+				<form name="formConversation" class="margin center" style=" width: 25%">
 					<div>
 						<span ng-bind-html="conversationForm.response"></span>
-
+						
 					</div>
 
 					<input type="hidden" ng-model="conversationForm.conversation_id">
 					<input style="text-align: center;" class="form-control" type="text" name="text" ng-model="conversationForm.text" placeholder="Envie um chat =)" ng-required="true" />
 				
-					<button class ="btn btn-block btn-primary" ng-click="send(conversationForm)" ng-disabled="formConversation.$invalid" style="color:#FFFFF0">Enviar</button>
+					<button class =" center btn btn-block btn-primary" ng-click="send(conversationForm)" ng-disabled="formConversation.$invalid" style="color:#FFFFF0; width: 35%">Enviar</button>
 				</form>
 			</div>
 		</div>
