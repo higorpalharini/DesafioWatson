@@ -28,7 +28,7 @@
 			<div style="width: 100%"> 
 				<form name="formConversation" class="margin center" style=" width: 25%">
 					<div>
-						<span ng-bind-html="conversationForm.response"></span>
+						<span ng-bind-html="trustAsHtml(conversationForm.response)"></span>
 					</div>
 
 					<input type="hidden" ng-model="conversationForm.conversation_id">
@@ -39,4 +39,4 @@
 			</div>
 		</div>
 	</body>
-</html> 
+</html>
