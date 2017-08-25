@@ -20,15 +20,15 @@
 	</head>
 
 	<body ng-controller="conversationCtrl">
-		<div class ="jumbotron center" style="text-align: center;">
+		<div align="center" >
 			<img style="width: 10%" src="./imagens/bot.png">
+			<h2 ng-bind="app"></h2>
+		</div>
+		<div>
 			<div style="width: 100%"> 
-				<h2 ng-bind="app"></h2>
-				
 				<form name="formConversation" class="margin center" style=" width: 25%">
 					<div>
 						<span ng-bind-html="conversationForm.response"></span>
-						
 					</div>
 
 					<input type="hidden" ng-model="conversationForm.conversation_id">
