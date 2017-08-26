@@ -1,42 +1,56 @@
 <html ng-app="conversation">
-	<head>
-		<meta charset="UTF-8">
-		<title>Chatbot</title>
 
-		<script src="lib/angular-1.5.7/angular.js"></script>
-		<script src="lib/angular-1.5.7/angular-messages.js"></script>
-		<script src="lib/angular-1.5.7/angular-locale_pt-br.js"></script>
-		<!-- My imports -->
-		<script src="js/app.js"></script>
-		<script src="js/controllers/conversationCtrl.js"></script>
-		<script src="js/services/conversationAPIService.js"></script>
-		<script src="js/value/configValue.js"></script>
-		<script src="js/sanitize.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
 
-		<!-- Bootstrap -->
-		<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.6-dist/css/bootstrap.css">
-		<!-- My css -->
-		<link rel="stylesheet" type="text/css" href="css/app.css">
-	</head>
+    <script src="lib/angular-1.5.7/angular.js"></script>
+    <script src="lib/angular-1.5.7/angular-messages.js"></script>
+    <script src="lib/angular-1.5.7/angular-locale_pt-br.js"></script>
+    <!-- My imports -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/conversationCtrl.js"></script>
+    <script src="js/services/conversationAPIService.js"></script>
+    <script src="js/value/configValue.js"></script>
+    <script src="js/sanitize.js"></script>
 
-	<body ng-controller="conversationCtrl">
-		<div align="center" >
-			<img style="width: 10%" src="./imagens/bot.png">
-			<h2 ng-bind="app"></h2>
-		</div>
-		<div>
-			<div style="width: 100%"> 
-				<form name="formConversation" class="margin center" style=" width: 25%">
-					<div>
-						<span ng-bind-html="trustAsHtml(conversationForm.response)"></span>
-					</div>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <!-- My css -->
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
 
-					<input type="hidden" ng-model="conversationForm.conversation_id">
-					<input style="text-align: center;" class="form-control" type="text" name="text" ng-model="conversationForm.text" placeholder="Envie um chat =)" ng-required="true" />
-				
-					<button class =" center btn btn-block btn-primary" ng-click="send(conversationForm)" ng-disabled="formConversation.$invalid" style="color:#FFFFF0; width: 35%">Enviar</button>
-				</form>
-			</div>
-		</div>
-	</body>
+<body ng-controller="conversationCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div align="center">
+                <img style="width: 10%" src="./imagens/bot.png">
+                <h2 ng-bind="app"></h2>
+            </div>
+        </div>
+        <div class="panel-body">
+            <form name="formConversation" class="margin center col-lg-8">
+                <input type="hidden" ng-model="conversationForm.conversation_id">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Conversa</div>
+                    <div class="panel-body">
+                    	<div class="panel panel-default" ng-if="conversationForm.response">
+                    		<div class="panel-body">
+                        		<span ng-bind-html="trustAsHtml(conversationForm.response)"></span>
+                        	</div>
+                        </div>
+	                    <div class="input-group">
+	                        <input class="form-control" type="text" name="text" ng-model="conversationForm.text" placeholder="Envie um chat =)" ng-required="true" />
+	                        <span class="input-group-btn">
+								<button class ="btn btn-block btn-primary" ng-click="send(conversationForm)" ng-disabled="formConversation.$invalid"">Enviar</button>
+							</span>
+	                    </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
 </html>
